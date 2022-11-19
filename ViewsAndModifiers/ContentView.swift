@@ -16,18 +16,35 @@ struct ContentView: View {
             Text("Obliviate")
         }
     }
+
+struct CapsuleText: View {
+    var text: String
+    
+    var body: some View {
+        Text(text)
+            .font(.largeTitle)
+            .padding()
+            .background(.blue)
+            .clipShape(Capsule())
+    }
+}
+    
     var body: some View {
         HStack{
-            VStack {
+            VStack(spacing: 10) {
                 Text("Gryffindor")
                 Text("Hufflepuff")
                     .font(.largeTitle)
                 Text("Ravenclaw")
                 Text("Slytherin")
+                
+                CapsuleText(text: "Wombat")
+                CapsuleText(text: "Weevil")
             }
             .font(.title)
             
             spells
+            
         }
     }
 }
