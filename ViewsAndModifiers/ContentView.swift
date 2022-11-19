@@ -9,15 +9,26 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var useRedText = false
-    var body: some View {
+    
+    @ViewBuilder var spells: some View {
         VStack {
-            Text("Gryffindor")
-            Text("Hufflepuff")
-                .font(.largeTitle)
-            Text("Ravenclaw")
-            Text("Slytherin")
+            Text("Lumos")
+            Text("Obliviate")
         }
-        .font(.title)
+    }
+    var body: some View {
+        HStack{
+            VStack {
+                Text("Gryffindor")
+                Text("Hufflepuff")
+                    .font(.largeTitle)
+                Text("Ravenclaw")
+                Text("Slytherin")
+            }
+            .font(.title)
+            
+            spells
+        }
     }
 }
 
